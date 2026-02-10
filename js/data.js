@@ -1,0 +1,146 @@
+const propiedades = [
+    {
+        id: 1,
+        titulo: "Casa Moderna en Cholula",
+        precio: 2500000,
+        ubicacion: "Cholula, Puebla",
+        m2: 180,
+        recamaras: 3,
+        banos: 2.5,
+        tipo: "Casa",
+        imagen: "https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?auto=format&fit=crop&w=600&q=80", // Placeholder online para probar
+        destacado: true
+    },
+    {
+        id: 2,
+        titulo: "Departamento de Lujo Angelópolis",
+        precio: 3200000,
+        ubicacion: "Angelópolis, Puebla",
+        m2: 120,
+        recamaras: 2,
+        banos: 2,
+        tipo: "Departamento",
+        imagen: "https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&w=600&q=80",
+        destacado: false
+    },
+    {
+        id: 3,
+        titulo: "Terreno Residencial Lomas",
+        precio: 1500000,
+        ubicacion: "Lomas de Angelópolis",
+        m2: 200,
+        recamaras: 0,
+        banos: 0,
+        tipo: "Terreno",
+        imagen: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80",
+        destacado: true
+    },
+    {
+        id: 4,
+        titulo: "Loft Industrial Centro",
+        precio: 1800000,
+        ubicacion: "Centro Histórico",
+        m2: 90,
+        recamaras: 1,
+        banos: 1,
+        tipo: "Departamento",
+        imagen: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80",
+        destacado: false
+    },
+    {
+        id: 5,
+        titulo: "Casa Familiar en Forjadores",
+        precio: 2100000,
+        ubicacion: "Cuautlancingo",
+        m2: 150,
+        recamaras: 3,
+        banos: 2,
+        tipo: "Casa",
+        imagen: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=600&q=80",
+        destacado: false
+    },
+    {
+        id: 6,
+        titulo: "Penthouse Vista Panorámica",
+        precio: 4500000,
+        ubicacion: "La Paz, Puebla",
+        m2: 210,
+        recamaras: 3,
+        banos: 3,
+        tipo: "Departamento",
+        imagen: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80",
+        destacado: true
+    },
+    {
+        id: 7,
+        titulo: "Casa con Jardín Amplio",
+        precio: 2800000,
+        ubicacion: "Momoxpan",
+        m2: 200,
+        recamaras: 4,
+        banos: 3,
+        tipo: "Casa",
+        imagen: "https://images.unsplash.com/photo-1576941089067-dbde57bdad3f?auto=format&fit=crop&w=600&q=80",
+        destacado: false
+    },
+    {
+        id: 8,
+        titulo: "Terreno Comercial Atlixcayotl",
+        precio: 5000000,
+        ubicacion: "Atlixcayotl",
+        m2: 300,
+        recamaras: 0,
+        banos: 0,
+        tipo: "Terreno",
+        imagen: "https://images.unsplash.com/photo-1464013778555-8e723c2f01f8?auto=format&fit=crop&w=600&q=80",
+        destacado: true
+    },
+    {
+        id: 9,
+        titulo: "Departamento Estudiantes",
+        precio: 1200000,
+        ubicacion: "CU BUAP",
+        m2: 65,
+        recamaras: 2,
+        banos: 1,
+        tipo: "Departamento",
+        imagen: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=600&q=80",
+        destacado: false
+    },
+    {
+        id: 10,
+        titulo: "Residencia de Lujo Zavaleta",
+        precio: 6200000,
+        ubicacion: "Zavaleta",
+        m2: 350,
+        recamaras: 4,
+        banos: 4.5,
+        tipo: "Casa",
+        imagen: "https://images.unsplash.com/photo-1600596542815-e328701102b9?auto=format&fit=crop&w=600&q=80",
+        destacado: true
+    },
+    {
+        id: 11,
+        titulo: "Casa Colonial Centro",
+        precio: 3500000,
+        ubicacion: "Puebla Centro",
+        m2: 280,
+        recamaras: 5,
+        banos: 3,
+        tipo: "Casa",
+        imagen: "https://images.unsplash.com/photo-1599809275671-b5942cabc7ad?auto=format&fit=crop&w=600&q=80",
+        destacado: false
+    },
+    {
+        id: 12,
+        titulo: "Terreno en Haras",
+        precio: 950000,
+        ubicacion: "Haras del Bosque",
+        m2: 500,
+        recamaras: 0,
+        banos: 0,
+        tipo: "Terreno",
+        imagen: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+        destacado: true
+    }
+];

@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.min.css">
-
-    <script src="js/catalogo.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     
 </head>
 <body>
@@ -18,31 +15,84 @@
         <div class="container">
             
             <a class="navbar-brand fw-bold" href="index.html">
-            <i class="bi bi-house-door-fill text-primary"></i> Inmoview
+                <i class="bi bi-house-door-fill text-primary"></i> Inmoview
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#miMenu">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="miMenu">
-            <div class="navbar-nav ms-auto gap-3"> <a class="nav-link active text-primary" href="#">Inicio</a>
-                
-                <a class="nav-link" href="favoritos.html">
-                    <i class="bi bi-heart"></i> Favoritos
-                </a>
-                
-                <a class="nav-link" href="comparador.html">
-                    <i class="bi bi-arrow-left-right"></i> Comparador
-                </a>
-                
-                <a class="nav-link" href="contacto.html">
-                    <i class="bi bi-people"></i> Nosotros
-                </a>
-                
-            </div>
+                <div class="navbar-nav ms-auto gap-3"> 
+                    
+                    <a class="nav-link active text-primary" href="index.html">Inicio</a>
+                    
+                    <a class="nav-link" href="favoritos.html">
+                        <i class="bi bi-heart"></i> Favoritos
+                    </a>
+                    
+                    <a class="nav-link" href="comparador.html">
+                        <i class="bi bi-arrow-left-right"></i> Comparador
+                    </a>
+                    
+                    <a class="nav-link" href="contacto.html">
+                        <i class="bi bi-people"></i> Contacto
+                    </a>
+                    
+                </div>
             </div>
         </div>
     </nav>
+
+    <header class="bg-dark text-white py-5 text-center" style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9));">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Encuentra tu lugar ideal</h1>
+            <p class="lead mb-4 text-warning">Explora las mejores propiedades en venta y renta</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="input-group input-group-lg">
+                        <input type="text" id="buscador" class="form-control" placeholder="Buscar por ubicación o título...">
+                        <button class="btn btn-warning fw-bold" type="button">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container my-4">
+        <div class="row g-3 p-3 bg-light rounded shadow-sm">
+            <div class="col-md-4">
+                <label class="form-label fw-bold">Tipo de Inmueble</label>
+                <select id="filtro-tipo" class="form-select">
+                    <option value="todos">Todos</option>
+                    <option value="Casa">Casas</option>
+                    <option value="Departamento">Departamentos</option>
+                    <option value="Terreno">Terrenos</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label fw-bold">Precio Máximo</label>
+                <input type="number" id="filtro-precio" class="form-control" placeholder="Ej: 3000000">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label fw-bold">Recámaras (Mínimo)</label>
+                <input type="number" id="filtro-recamaras" class="form-control" placeholder="Ej: 2">
+            </div>
+        </div>
+    </section>
+
+    <main class="container mb-5">
+        <div id="contenedor-propiedades" class="row g-4">
+            </div>
+    </main>
+    
+    <script src="js/data.js"></script> 
+    <script src="js/catalogo.js"></script>
+    
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p class="m-0">&copy; 2024 InmoView - Desarrollo Web</p>
+    </footer>
+    
 </body>
 </html>

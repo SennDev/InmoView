@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Propiedades</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.min.css">
+</head>
+<body>
+ <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-house-door-fill text-primary"></i> Inmoview
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#miMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="miMenu">
+                <div class="navbar-nav ms-auto gap-3"> 
+                    
+                    <a class="nav-link active text-primary" href="index.html">Inicio</a>
+                    
+                    <a class="nav-link" href="favoritos.html">
+                        <i class="bi bi-heart"></i> Favoritos
+                    </a>
+                    
+                    <a class="nav-link" href="comparador.html">
+                        <i class="bi bi-arrow-left-right"></i> Comparador
+                    </a>
+                    
+                    <a class="nav-link" href="contacto.html">
+                        <i class="bi bi-people"></i> Contacto
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Comparador de Propiedades</h2>
+        <button id="btn-exportar" class="btn btn-success"><i class="bi bi-file-earmark-spreadsheet"></i> Exportar CSV</button>
+    </div>
+    
+    <div class="table-responsive">
+        <table class="table table-bordered text-center shadow-sm" id="tabla-comparativa">
+            <thead class="table-dark">
+                <tr id="fila-titulos">
+                    <th>Característica</th>
+                    </tr>
+            </thead>
+            <tbody id="cuerpo-tabla">
+                </tbody>
+        </table>
+    </div>
+    <button class="btn btn-outline-danger mt-3" onclick="limpiarComparador()">Limpiar Comparador</button>
+    </main>
+    <script src="js/comparador.js"></script>
+
+</body>
+</html>
