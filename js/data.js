@@ -8,7 +8,7 @@ const propiedades = [
         recamaras: 3,
         banos: 2.5,
         tipo: "Casa",
-        imagen: "https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?auto=format&fit=crop&w=600&q=80", // Placeholder online para probar
+        imagen: "img/propiedades/propiedad1.jpg",
         destacado: true
     },
     {
@@ -20,7 +20,7 @@ const propiedades = [
         recamaras: 2,
         banos: 2,
         tipo: "Departamento",
-        imagen: "https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&w=600&q=80",
+        imagen: "img/propiedades/propiedad2.jpg",
         destacado: false
     },
     {
@@ -32,7 +32,7 @@ const propiedades = [
         recamaras: 0,
         banos: 0,
         tipo: "Terreno",
-        imagen: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80",
+        imagen: "img/propiedades/propiedad3.jpg",
         destacado: true
     },
     {
@@ -44,7 +44,7 @@ const propiedades = [
         recamaras: 1,
         banos: 1,
         tipo: "Departamento",
-        imagen: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80",
+        imagen: "img/propiedades/propiedad4.jpg",
         destacado: false
     },
     {
@@ -56,7 +56,7 @@ const propiedades = [
         recamaras: 3,
         banos: 2,
         tipo: "Casa",
-        imagen: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=600&q=80",
+        imagen: "img/propiedades/propiedad5.jpg",
         destacado: false
     },
     {
@@ -68,7 +68,7 @@ const propiedades = [
         recamaras: 3,
         banos: 3,
         tipo: "Departamento",
-        imagen: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80",
+        imagen: "img/propiedades/propiedad6.jpg",
         destacado: true
     },
     {
@@ -80,7 +80,7 @@ const propiedades = [
         recamaras: 4,
         banos: 3,
         tipo: "Casa",
-        imagen: "https://images.unsplash.com/photo-1576941089067-dbde57bdad3f?auto=format&fit=crop&w=600&q=80",
+        imagen: "img/propiedades/propiedad7.jpg",
         destacado: false
     },
     {
@@ -92,7 +92,7 @@ const propiedades = [
         recamaras: 0,
         banos: 0,
         tipo: "Terreno",
-        imagen: "https://images.unsplash.com/photo-1464013778555-8e723c2f01f8?auto=format&fit=crop&w=600&q=80",
+        imagen: "img/propiedades/propiedad8.jpg",
         destacado: true
     },
     {
@@ -104,7 +104,7 @@ const propiedades = [
         recamaras: 2,
         banos: 1,
         tipo: "Departamento",
-        imagen: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=600&q=80",
+        imagen: "img/propiedades/propiedad9.jpg",
         destacado: false
     },
     {
@@ -116,7 +116,7 @@ const propiedades = [
         recamaras: 4,
         banos: 4.5,
         tipo: "Casa",
-        imagen: "https://images.unsplash.com/photo-1600596542815-e328701102b9?auto=format&fit=crop&w=600&q=80",
+        imagen: "img/propiedades/propiedad10.jpg",
         destacado: true
     },
     {
@@ -128,7 +128,7 @@ const propiedades = [
         recamaras: 5,
         banos: 3,
         tipo: "Casa",
-        imagen: "https://images.unsplash.com/photo-1599809275671-b5942cabc7ad?auto=format&fit=crop&w=600&q=80",
+        imagen: "img/propiedades/propiedad11.jpg",
         destacado: false
     },
     {
@@ -140,7 +140,7 @@ const propiedades = [
         recamaras: 0,
         banos: 0,
         tipo: "Terreno",
-        imagen: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+        imagen: "img/propiedades/propiedad12.jpg",
         destacado: true
     }
 ];
