@@ -2,6 +2,7 @@ const params = new URLSearchParams(window.location.search);
 const id = parseInt(params.get('id'));
 const contenedor = document.getElementById('detalle-container');
 
+// Buscamos la propiedad en el array 'propiedades' cargado desde data.js
 const propiedad = propiedades.find(p => p.id === id);
 
 if (propiedad) {
@@ -12,9 +13,9 @@ if (propiedad) {
             <div id="carouselPropiedad" class="carousel slide shadow rounded overflow-hidden" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="${propiedad.imagen}" class="d-block w-100" alt="Foto Principal">
+                        <img src="${propiedad.imagen}" class="d-block w-100" alt="Foto Principal" style="height: 400px; object-fit: cover;">
                     </div>
-                    </div>
+                </div>
             </div>
         </div>
         
@@ -54,9 +55,52 @@ if (propiedad) {
         </div>
     `;
 } else {
-    contenedor.innerHTML = '<h3>Propiedad no encontrada</h3>';
+    contenedor.innerHTML = '<div class="col-12 text-center"><h3>Propiedad no encontrada</h3><a href="index.html" class="btn btn-primary mt-3">Volver al inicio</a></div>';
 }
 
-// Reutilizamos lógica de LocalStorage (puedes copiar las funciones de catalogo.js aquí o hacer un archivo utils.js)
-function agregarFavorito(id) { /* ... Misma lógica que catalogo.js ... */ }
-function agregarComparar(id) { /* ... Misma lógica que catalogo.js ... */ }
+// --- LÓGICA DE FAVORITOS ---
+window.agregarFavorito = (id) => {
+    // 1. Obtener favoritos actuales
+    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+    
+    // 2. Verificar si ya existe
+    const existe = favoritos.some(f => f.id === id);
+
+    if (existe) {
+        alert('Esta propiedad ya está en tus favoritos.');
+    } else {
+        // 3. Buscar el objeto completo en el array global 'propiedades'
+        const item = propiedades.find(p => p.id === id);
+        if (item) {
+            favoritos.push(item);
+            localStorage.setItem('favoritos', JSON.stringify(favoritos));
+            alert('¡Agregada a favoritos correctamente!');
+        }
+    }
+};
+
+// --- LÓGICA DE COMPARADOR ---
+window.agregarComparar = (id) => {
+    // 1. Obtener comparador actual
+    let comparador = JSON.parse(localStorage.getItem('comparador')) || [];
+
+    // 2. Validación de duplicados
+    if (comparador.some(c => c.id === id)) {
+        alert('Esta propiedad ya está en el comparador.');
+        return;
+    }
+
+    // 3. Validación de límite (Máximo 4)
+    if (comparador.length >= 4) {
+        alert('Solo puedes comparar un máximo de 4 propiedades.');
+        return;
+    }
+
+    // 4. Agregar y guardar
+    const item = propiedades.find(p => p.id === id);
+    if (item) {
+        comparador.push(item);
+        localStorage.setItem('comparador', JSON.stringify(comparador));
+        alert('Agregada al comparador. Ve a la sección "Comparador" para ver la tabla.');
+    }
+};
