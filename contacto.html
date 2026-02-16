@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,34 +10,20 @@
     <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.min.css">
 </head>
 <body>
- <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
-            
             <a class="navbar-brand fw-bold" href="index.html">
                 <i class="bi bi-house-door-fill text-primary"></i> Inmoview
             </a>
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#miMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="miMenu">
                 <div class="navbar-nav ms-auto gap-3"> 
-                    
                     <a class="nav-link" href="index.html">Inicio</a>
-                    
-                    <a class="nav-link" href="favoritos.html">
-                        <i class="bi bi-heart"></i> Favoritos
-                    </a>
-                    
-                    <a class="nav-link" href="comparador.html">
-                        <i class="bi bi-arrow-left-right"></i> Comparador
-                    </a>
-                    
-                    <a class="nav-link active text-primary" href="contacto.html">
-                        <i class="bi bi-people"></i> Contacto
-                    </a>
-                    
+                    <a class="nav-link" href="favoritos.html"><i class="bi bi-heart"></i> Favoritos</a>
+                    <a class="nav-link" href="comparador.html"><i class="bi bi-arrow-left-right"></i> Comparador</a>
+                    <a class="nav-link active text-primary" href="contacto.html"><i class="bi bi-people"></i> Contacto</a>
                 </div>
             </div>
         </div>
@@ -45,31 +31,64 @@
     
     <main class="container my-5">
         <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <div class="card shadow">
+            <div class="col-lg-8"> <div class="card shadow border-0">
                     <div class="card-header bg-primary text-white text-center py-3">
-                        <h3 class="m-0">Contáctanos</h3>
+                        <h3 class="m-0 fw-bold"><i class="bi bi-envelope-paper"></i> Contáctanos</h3>
+                        <p class="m-0 small opacity-75">Completa el formulario para recibir información de una propiedad</p>
                     </div>
                     <div class="card-body p-4">
                         <form id="form-contacto">
-                            <div class="mb-3">
-                                <label class="form-label">Nombre Completo</label>
-                                <input type="text" id="nombre" class="form-control" placeholder="Tu nombre">
+                            
+                            <h5 class="text-primary mb-3"><i class="bi bi-person"></i> Datos Personales</h5>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Nombre(s) <span class="text-danger">*</span></label>
+                                    <input type="text" id="nombre" class="form-control" placeholder="Ej. Juan">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Apellidos <span class="text-danger">*</span></label>
+                                    <input type="text" id="apellidos" class="form-control" placeholder="Ej. Pérez López">
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label">Correo Electrónico</label>
-                                <input type="email" id="email" class="form-control" placeholder="nombre@correo.com">
+
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label class="form-label">Correo Electrónico <span class="text-danger">*</span></label>
+                                    <input type="email" id="email" class="form-control" placeholder="nombre@correo.com">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Teléfono Móvil <span class="text-danger">*</span></label>
+                                    <input type="tel" id="telefono" class="form-control" placeholder="10 dígitos" maxlength="10">
+                                </div>
                             </div>
+
+                            <h5 class="text-primary mb-3"><i class="bi bi-geo-alt"></i> Ubicación</h5>
                             <div class="mb-3">
-                                <label class="form-label">Teléfono (Opcional)</label>
-                                <input type="tel" id="telefono" class="form-control" placeholder="10 dígitos">
+                                <label class="form-label">Dirección (Calle y Número) <span class="text-danger">*</span></label>
+                                <input type="text" id="direccion" class="form-control" placeholder="Ej. Av. Reforma 123">
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label">Mensaje</label>
-                                <textarea id="mensaje" class="form-control" rows="4"></textarea>
+
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-4">
+                                    <label class="form-label">Código Postal <span class="text-danger">*</span></label>
+                                    <input type="tel" id="cp" class="form-control" placeholder="Ej. 72000" maxlength="5">
+                                </div>
+                                <div class="col-md-8">
+                                    <label class="form-label">Ciudad / Estado <span class="text-danger">*</span></label>
+                                    <input type="text" id="ciudad" class="form-control" placeholder="Ej. Puebla, Pue.">
+                                </div>
                             </div>
+
+                            <h5 class="text-primary mb-3"><i class="bi bi-chat-text"></i> Tu Solicitud</h5>
+                            <div class="mb-4">
+                                <label class="form-label">Mensaje <span class="text-danger">*</span></label>
+                                <textarea id="mensaje" class="form-control" rows="4" placeholder="Estoy interesado en la propiedad... (Mínimo 20 caracteres)"></textarea>
+                            </div>
+
                             <div class="d-grid">
-                                <button type="submit" class="btn btn-primary btn-lg">Enviar Mensaje</button>
+                                <button type="submit" class="btn btn-primary btn-lg fw-bold shadow-sm">
+                                    Enviar Solicitud <i class="bi bi-send ms-2"></i>
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -77,18 +96,15 @@
             </div>
         </div>
     </main>
-    <script src="js/contacto.js"></script>
 
     <footer class="bg-dark text-white py-4 mt-5">
         <div class="container">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small">
-                
                 <div class="text-center text-md-start mb-2 mb-md-0">
                     <span>InmoView</span> &copy; 2026
                     <span class="mx-2 text-secondary">|</span>
                     <span class="text-light opacity-75">Desarrollo de Sitios Web</span>
                 </div>
-
                 <div class="text-center text-md-end">
                     <span class="text-secondary me-2">Team:</span>
                     <span class="text-white">Gerson &bull; Bernardo &bull; Pablo</span>
@@ -97,5 +113,7 @@
         </div>
     </footer>
 
+    <script src="js/contacto.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
