@@ -142,5 +142,5 @@ const propiedades = [
         tipo: "Terreno",
         imagen: "img/propiedades/propiedad12.jpg",
         destacado: true
-    }
+    },
 ];

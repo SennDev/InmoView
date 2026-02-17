@@ -4,24 +4,30 @@ const inputApellidos = document.getElementById('apellidos');
 const inputTelefono = document.getElementById('telefono');
 const inputCP = document.getElementById('cp');
 
-function bloquearNumeros(e) {
-    this.value = this.value.replace(/[0-9]/g, ''); 
+function limpiarNombreRealTime(e) {
+    let valor = this.value;
+
+    valor = valor.replace(/[^a-zA-ZÁÉÍÓÚáéíóúñÑ\s]/g, '');
+    valor = valor.replace(/\s{2,}/g, ' ');
+
+    if (valor.startsWith(' ')) {
+        valor = valor.trimStart();
+    }
+
+    this.value = valor;
 }
-inputNombre.addEventListener('input', bloquearNumeros);
-inputApellidos.addEventListener('input', bloquearNumeros);
 
-function bloquearLetras(e) {
-    this.value = this.value.replace(/\D/g, ''); 
+function limpiarNumerosRealTime(e) {
+    this.value = this.value.replace(/\D/g, '');
 }
-inputTelefono.addEventListener('input', bloquearLetras);
-inputCP.addEventListener('input', bloquearLetras);
 
+inputNombre.addEventListener('input', limpiarNombreRealTime);
+inputApellidos.addEventListener('input', limpiarNombreRealTime);
+inputTelefono.addEventListener('input', limpiarNumerosRealTime);
+inputCP.addEventListener('input', limpiarNumerosRealTime);
 
-// --- VALIDACIONES ---
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    
-    // Obtener todos los valores
     const nombre = inputNombre.value.trim();
     const apellidos = inputApellidos.value.trim();
     const email = document.getElementById('email').value.trim();
@@ -31,15 +37,17 @@ form.addEventListener('submit', (e) => {
     const ciudad = document.getElementById('ciudad').value.trim();
     const mensaje = document.getElementById('mensaje').value.trim();
     
-    // 1. Campos vacíos
+    // --- VALIDACIONES ---
+    
+    // 1. Detección de campos vacíos o de solo espacios
     if (!nombre || !apellidos || !email || !telefono || !direccion || !cp || !ciudad || !mensaje) {
-        alert('Por favor completa todos los campos obligatorios.');
+        alert('Por favor completa todos los campos. No se permiten campos vacíos.');
         return;
     }
     
-    // 2. Longitud de nombres
+    // 2. Validación extra de Nombre 
     if (nombre.length < 2 || apellidos.length < 2) {
-        alert('Por favor ingresa nombres y apellidos válidos.');
+        alert('El nombre y los apellidos deben tener al menos 2 letras.');
         return;
     }
 
@@ -49,7 +57,7 @@ form.addEventListener('submit', (e) => {
         return;
     }
 
-    // 4. Código Postal
+    // 4. Código Postal 
     if (cp.length !== 5) {
         alert('El Código Postal debe tener 5 dígitos.');
         return;
@@ -58,40 +66,37 @@ form.addEventListener('submit', (e) => {
     // 5. Email
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!regexEmail.test(email)) {
-        alert('Por favor ingresa un correo electrónico válido.');
+        alert('Por favor ingresa un correo electrónico válido (ejemplo: usuario@dominio.com).');
         return;
     }
 
     // 6. Mensaje
     if (mensaje.length < 20) {
-        alert('El mensaje es muy corto (mínimo 20 caracteres).');
+        alert('El mensaje es muy corto. Por favor detalla más tu solicitud (mínimo 20 caracteres).');
         return;
     }
 
-    // --- GUARDAR Y DESCARGAR ---
+    // --- GUARDADO  ---
     const datosFormulario = {
         nombre, apellidos, email, telefono, direccion, cp, ciudad, mensaje
     };
 
     guardarYDescargarAcumulado(datosFormulario);
 
-    alert(`¡Gracias ${nombre}! Hemos registrado tu solicitud exitosamente.`);
+    alert(`¡Gracias ${nombre}! Tus datos han sido validados y guardados correctamente.`);
     form.reset();
 });
 
 function guardarYDescargarAcumulado(datos) {
-
     const nuevoContacto = {
         fecha: new Date().toLocaleString(),
         ...datos 
     };
 
     let historial = JSON.parse(localStorage.getItem('historial_contactos')) || [];
-
     historial.push(nuevoContacto);
     localStorage.setItem('historial_contactos', JSON.stringify(historial));
 
-    // Generar TXT
     let contenidoTexto = "=== BASE DE DATOS DE CONTACTOS (INMOVIEW) ===\n\n";
 
     historial.forEach((c, index) => {
